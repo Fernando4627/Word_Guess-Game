@@ -7,6 +7,8 @@ var words = [
 var allowedGuesses;
 var correctGuesses;
 var wrongGuesses;
+var win;
+var lose;
 
 var wordElement = document.getElementById('word');
 var letterCountElement = document.getElementById('letterCount');
@@ -55,9 +57,11 @@ function updateGuesses(letter) {
 function checkWin() {
     if (correctGuesses.indexOf('_') === -1) {
         alert('You Won!');
+        win++;
         initializeGame();
     } else if (allowedGuesses === 0) {
         alert('You Lost!');
+        lose++;
         initializeGame();
     }
 }
